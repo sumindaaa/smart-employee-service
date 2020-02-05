@@ -1,10 +1,10 @@
-package sumindaaa.smartemployeeservice;
+package com.sumindaa.demo.employeeservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SmartEmployeeServiceApplicationTests {
+class EmployeeServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
