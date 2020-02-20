@@ -4,10 +4,10 @@ import java.util.Date;
 
 public class Employee {
     private int id;
-    private char firstName;
-    private char lastName;
+    private String firstName;
+    private String lastName;
     private Date dob;
-    private char gender;
+    private String gender;
 
     public int getId() {
         return id;
@@ -17,19 +17,19 @@ public class Employee {
         this.id = id;
     }
 
-    public char getFirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(char firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    public char getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(char lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
@@ -41,11 +41,11 @@ public class Employee {
         this.dob = dob;
     }
 
-    public char getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 }
