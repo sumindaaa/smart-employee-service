@@ -2,33 +2,41 @@ package com.sumindaa.demo.employeeservice.controller;
 
 import com.sumindaa.demo.employeeservice.model.Employee;
 import com.sumindaa.demo.employeeservice.service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 class EmployeeController {
+    @Autowired
+    private EmployeeService employeeService;
+
     @RequestMapping("/employees")
-    public String getAllTopics() {
-        return "all topics";
+    public List<Employee> getAllEmp() {
 
+        return employeeService.getAllEmployees();
     }
 
-    @RequestMapping("/employees/{id}")
-    public Employee getEmployee(@PathVariable int id) {
-        return EmployeeService.getEmployee(id);
+
+  @RequestMapping("/employees/{id}")
+    public Employee getEmployee(@PathVariable String id) {
+        return employeeService.getEmployee(id);
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/employees")
+  @RequestMapping(method = RequestMethod.POST, value = "/employees")
     public void addEmployee(@RequestBody Employee employee) {
-        EmployeeService.addEmployee(employee);
-    }
+        employeeService.addEmployee(employee);
+    }}
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/employees/{id}")
+/**  @RequestMapping(method = RequestMethod.PUT, value = "/employees/{id}")
     public void addEmployee(@RequestBody Employee employee, @PathVariable int id) {
-        EmployeeService.updateEmployee(id, employee);
+        employeeService.updateEmployee(id, employee);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/employees/{id}")
     public void deleteEmployee(@PathVariable int id) {
-        EmployeeService.deleteEmployee(id);
+        employeeService.deleteEmployee(id);
     }
 }
+**/

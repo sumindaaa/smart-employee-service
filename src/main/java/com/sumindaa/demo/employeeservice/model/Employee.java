@@ -9,8 +9,17 @@ public class Employee {
     private Date dob;
     private String gender;
 
-    public int getId() {
-        return id;
+
+    public Employee() {
+
+
+    }
+    public Employee( String firstName, String lastName, String gender) {
+        super();
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
     }
 
     public void setId(int id) {
@@ -33,13 +42,13 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public Date getDob() {
-        return dob;
-    }
+   // public Date getDob() {
+      //  return dob;
+    //}
 
-    public void setDob(Date dob) {
-        this.dob = dob;
-    }
+    //public void setDob(Date dob) {
+     //   this.dob = dob;
+    //}
 
     public String getGender() {
         return gender;
