@@ -28,10 +28,9 @@ public class SimpleTest {
     void test3() {
         Random rand = new Random();
         int test1 = 1;
-
-    int test2 = rand.nextInt(2);
+        int test2 = rand.nextInt(2);
         System.out.println(test2);
         assertEquals(test1, test2);
-}
+    }
 
 }
