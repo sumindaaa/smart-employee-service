@@ -19,24 +19,25 @@ class EmployeeController {
     }
 
 
-  @RequestMapping("/employees/{id}")
+    @RequestMapping("/employees/{id}")
     public Employee getEmployee(@PathVariable String id) {
         return employeeService.getEmployee(id);
     }
 
-  @RequestMapping(method = RequestMethod.POST, value = "/employees")
+    @RequestMapping(method = RequestMethod.POST, value = "/employees")
     public void addEmployee(@RequestBody Employee employee) {
         employeeService.addEmployee(employee);
-    }}
-
-/**  @RequestMapping(method = RequestMethod.PUT, value = "/employees/{id}")
-    public void addEmployee(@RequestBody Employee employee, @PathVariable int id) {
-        employeeService.updateEmployee(id, employee);
-    }
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/employees/{id}")
-    public void deleteEmployee(@PathVariable int id) {
-        employeeService.deleteEmployee(id);
     }
 }
-**/
+
+/**
+ * @RequestMapping(method = RequestMethod.PUT, value = "/employees/{id}")
+ * public void addEmployee(@RequestBody Employee employee, @PathVariable int id) {
+ * employeeService.updateEmployee(id, employee);
+ * }
+ * @RequestMapping(method = RequestMethod.DELETE, value = "/employees/{id}")
+ * public void deleteEmployee(@PathVariable int id) {
+ * employeeService.deleteEmployee(id);
+ * }
+ * }
+ **/

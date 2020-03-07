@@ -14,6 +14,7 @@ public class Employee {
 
 
     }
+
     public Employee(String firstName, String lastName, String gender) {
         super();
 
@@ -42,12 +43,12 @@ public class Employee {
         this.lastName = lastName;
     }
 
-   // public Date getDob() {
-      //  return dob;
+    // public Date getDob() {
+    //  return dob;
     //}
 
     //public void setDob(Date dob) {
-     //   this.dob = dob;
+    //   this.dob = dob;
     //}
 
     public String getGender() {
