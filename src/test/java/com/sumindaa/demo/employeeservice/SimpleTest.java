@@ -19,18 +19,18 @@ public class SimpleTest {
 
     @Test
     void test2() {
-        int test1 = 1;
+        int test1 = 2;
         int test2 = 2;
         assertEquals(test1, test2);
     }
 
-    @Test
-    void test3() {
-        Random rand = new Random();
-        int test1 = 1;
-        int test2 = rand.nextInt(2);
-        System.out.println(test2);
-        assertEquals(test1, test2);
-    }
+//    @Test
+//    void test3() {
+//        Random rand = new Random();
+//        int test1 = 1;
+//        int test2 = rand.nextInt(2);
+//        System.out.println(test2);
+//        assertEquals(test1, test2);
+//    }
 
 }
