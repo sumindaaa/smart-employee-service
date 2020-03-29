@@ -20,7 +20,7 @@ class EmployeeController {
 
 
     @RequestMapping("/employees/{id}")
-    public Employee getEmployee(@PathVariable String id) {
+    public Employee getEmployee(@PathVariable int id) {
         return employeeService.getEmployee(id);
     }
 
@@ -31,15 +31,13 @@ class EmployeeController {
 
 
     @RequestMapping(method = RequestMethod.PUT, value = "/employees/{id}")
-    public void addEmployee(@RequestBody Employee employee, @PathVariable String id) {
-        employeeService.updateEmployee( id, employee);
+    public void updateEmployee(@RequestBody Employee employee, @PathVariable int id) {
+        employeeService.updateEmployee(id, employee);
+    }
+
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/employees/{id}")
+    public void deleteEmployee(@PathVariable int id) {
+        employeeService.deleteEmployee(id);
     }
 }
-
-
-/*** @RequestMapping(method = RequestMethod.DELETE, value = "/employees/{id}")
- * public void deleteEmployee(@PathVariable int id) {
- * employeeService.deleteEmployee(id);
- * }
- * }
- **/

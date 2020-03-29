@@ -1,12 +1,18 @@
 package com.sumindaa.demo.employeeservice.model;
 
-import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Employee {
-  //  private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     private String firstName;
     private String lastName;
-   // private Date dob;
+
     private String gender;
 
 
@@ -15,18 +21,24 @@ public class Employee {
 
     }
 
-    public Employee(String firstName, String lastName, String gender) {
+    public Employee(int id, String firstName, String lastName, String gender) {
         super();
 
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
     }
 
-   // public void setId(int id) {
-     //   this.id = id;
-    //}
-//
+    public int getId() {
+        return id;
+    }
+
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -43,13 +55,6 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    // public Date getDob() {
-    //  return dob;
-    //}
-
-    //public void setDob(Date dob) {
-    //   this.dob = dob;
-    //}
 
     public String getGender() {
         return gender;
