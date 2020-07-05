@@ -48,13 +48,13 @@ public class EmployeeService {
         }
     }
 
-        public void deleteEmployee ( int id){
-            for (int i = 0; i < employees.size(); i++) {
+    public void deleteEmployee(int id) {
+        for (int i = 0; i < employees.size(); i++) {
 
-                if (employees.get(i).getId() == id) {
-                    employees.remove(i);
-                }
+            if (employees.get(i).getId() == id) {
+                employees.remove(i);
             }
-
         }
+
     }
+}

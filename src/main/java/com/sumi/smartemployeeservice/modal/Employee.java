@@ -4,15 +4,17 @@ public class Employee {
     private int id;
     private String name;
     private String address;
-    public Employee(){
+
+    public Employee() {
 
     }
+
     public Employee(int id, String name, String address) {
         super();
-        this.id=id;
-        this.address=address;
-        this.name=name;
-            }
+        this.id = id;
+        this.address = address;
+        this.name = name;
+    }
 
     public int getId() {
         return id;
@@ -35,6 +37,6 @@ public class Employee {
     }
 
     public void setAddress(String address) {
-       this.address = address;
+        this.address = address;
     }
 }
