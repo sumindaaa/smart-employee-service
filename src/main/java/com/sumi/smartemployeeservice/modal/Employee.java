@@ -1,7 +1,14 @@
 package com.sumi.smartemployeeservice.modal;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Employee {
-    private int id;
+    @Id
+    //@GeneratedValue
+    private Integer id;
     private String name;
     private String address;
 
@@ -9,7 +16,7 @@ public class Employee {
 
     }
 
-    public Employee(int id, String name, String address) {
+    public Employee(Integer id, String name, String address) {
         super();
         this.id = id;
         this.address = address;
@@ -20,7 +27,7 @@ public class Employee {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

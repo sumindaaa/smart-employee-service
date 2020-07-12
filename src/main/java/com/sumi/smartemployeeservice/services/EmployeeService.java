@@ -1,60 +1,45 @@
 package com.sumi.smartemployeeservice.services;
 
 import com.sumi.smartemployeeservice.modal.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeService {
-
-    private List<Employee> employees = new ArrayList<>(Arrays.asList(
-            new Employee(1, "sumi", "katu"),
-
-            new Employee(2, "sumi", "katu")
-
-    ));
+    @Autowired
+    private EmployeeRepository employeeRepository;
 
 
     public List<Employee> getEmployees() {
 
+        List<Employee> employees = new ArrayList<>();
+        employeeRepository.findAll().forEach(employee -> employees.add(employee));
         return employees;
     }
 
-    public Employee getEmployee(int id) {
-        Employee emp = new Employee();
-        for (Employee employee : employees
-        ) {
-            if (employee.getId() == id) {
-                emp = employee;
-            }
-        }
-        return emp;
+
+    public Optional<Employee> getEmployee(Integer id) {
+        return employeeRepository.findById(id);
+
     }
 
     public void createEmployee(Employee employee) {
-        employees.add(employee);
+
+        employeeRepository.save(employee);
     }
 
-    public void editEmployee(Employee employee, int id) {
-        Employee temp = new Employee();
-        for (int i = 0; i < employees.size(); i++) {
 
-            if (employees.get(i).getId() == id) {
-                employees.set(i, employee);
-            }
-        }
+    public void editEmployee(Employee employee, int id) {
+        employeeRepository.save(employee);
     }
 
     public void deleteEmployee(int id) {
-        for (int i = 0; i < employees.size(); i++) {
-
-            if (employees.get(i).getId() == id) {
-                employees.remove(i);
-            }
-        }
+        employeeRepository.deleteById(id);
 
     }
 }
